@@ -1,13 +1,15 @@
 import React from "react";
 import "./TabsView.css";
 
-export default function TabsView() {
+export default function TabsView(props: { tabs: number[] }) {
     return (
         <div className="box">
             <div className="tabs">
-                <div className="tab selected">Tab 1</div>
-                <div className="tab">Tab 2</div>
-                <div className="tab">Tab 3</div>
+                {props.tabs.map((number, index) => {
+                    return (
+                        <div className="tab">Tab {index}</div>
+                    )
+                })}
             </div>
             <div>Content</div>
         </div>

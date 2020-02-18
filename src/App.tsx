@@ -5,7 +5,7 @@ import TabsView from "./TabsView/TabsView";
 function App() {
   return (
       <div>
-        <TabsView />
+        <TabsView tabs={[1,2,3]} />
         <div className="box">
           <div className="tabs">
             <div className="tab selected">Tab 4</div>
