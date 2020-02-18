@@ -1,18 +1,11 @@
 import React from "react";
 import "./App.css";
+import TabsView from "./TabsView/TabsView";
 
 function App() {
   return (
       <div>
-        <div className="box">
-          <div className="tabs">
-            <div className="tab selected">Tab 1</div>
-            <div className="tab">Tab 2</div>
-            <div className="tab">Tab 3</div>
-          </div>
-          <div>Content</div>
-        </div>
-
+        <TabsView />
         <div className="box">
           <div className="tabs">
             <div className="tab selected">Tab 4</div>
