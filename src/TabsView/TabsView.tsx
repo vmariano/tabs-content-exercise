@@ -1,14 +1,14 @@
-import React, {ReactHTMLElement} from "react";
+import React from "react";
 import "./TabsView.css";
 
 type TabElement = {
     title: string;
-    content: ReactHTMLElement<any>;
+    content: JSX.Element;
 };
 
 type Props = {
   tabs: TabElement[];
-  selected: 1;
+  selected: number;
 }
 
 export default function TabsView(props: Props) {
