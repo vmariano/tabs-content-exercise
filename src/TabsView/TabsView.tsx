@@ -13,13 +13,24 @@ type Props = {
 
 export default function TabsView(props: Props) {
     const [currentContent, setContent] = useState(props.tabs[props.selected].content);
+    const [tabSelected, setTabSelected] = useState(props.selected);
     return (
         <div className="box">
             <div className="tabs">
-                {props.tabs.map((number, index) => {
-                    return (
-                        <div className="tab">Tab {index}</div>
-                    )
+                {props.tabs.map((tableElement, index) => {
+                    if (tabSelected === index) {
+                        return (<div className="tab selected" onClick={() => {
+                            setContent(props.tabs[index].content);
+                            setTabSelected(index)
+                        }}>{tableElement.title}</div>)
+                    } else {
+                        return (
+                            <div className="tab" onClick={() => {
+                                setContent(props.tabs[index].content);
+                                setTabSelected(index)
+                            }}>{tableElement.title}</div>
+                        );
+                    }
                 })}
             </div>
             <div>{currentContent}</div>
