@@ -18,19 +18,12 @@ export default function TabsView(props: Props) {
         <div className="box">
             <div className="tabs">
                 {props.tabs.map((tableElement, index) => {
-                    if (tabSelected === index) {
-                        return (<div className="tab selected" onClick={() => {
+                    const tabClasses = tabSelected === index ? 'tab selected' : 'tab';
+                    return (
+                        <div className={tabClasses} onClick={() => {
                             setContent(props.tabs[index].content);
                             setTabSelected(index)
-                        }}>{tableElement.title}</div>)
-                    } else {
-                        return (
-                            <div className="tab" onClick={() => {
-                                setContent(props.tabs[index].content);
-                                setTabSelected(index)
-                            }}>{tableElement.title}</div>
-                        );
-                    }
+                    }}>{tableElement.title}</div>)
                 })}
             </div>
             <div>{currentContent}</div>
