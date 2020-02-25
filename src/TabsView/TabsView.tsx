@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./TabsView.css";
 
 type TabElement = {
@@ -12,6 +12,7 @@ type Props = {
 }
 
 export default function TabsView(props: Props) {
+    const [currentContent, setContent] = useState(props.tabs[props.selected].content);
     return (
         <div className="box">
             <div className="tabs">
@@ -21,7 +22,7 @@ export default function TabsView(props: Props) {
                     )
                 })}
             </div>
-            <div>Content</div>
+            <div>{currentContent}</div>
         </div>
     );
 }
